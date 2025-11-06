@@ -4,6 +4,11 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
+    "dev": "node app.js",
+    "setup-db": "node scripts/syncDatabase.js",
+    "seed-db": "node scripts/seedProducts.js",
+    "build": "npm run setup-db && npm run seed-db",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
