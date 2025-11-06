@@ -1,14 +1,14 @@
 require('dotenv').config();
 const { Sequelize } = require('sequelize');
 
-const sequelize=new Sequelize(
-    process.env.DB_NAME,
-    process.env.DB_USER,
-    process.env.DB_PASS,
+const sequelize = new Sequelize(
+    process.env.MYSQL_DATABASE || process.env.DB_NAME,
+    process.env.MYSQL_USER || process.env.DB_USER,
+    process.env.MYSQL_PASSWORD || process.env.DB_PASS,
     {
-        host:process.env.DB_HOST,
-        dialect:process.env.DB_DIALECT,
-        port:process.env.DB_PORT,
+        host: process.env.MYSQL_HOST || process.env.DB_HOST,
+        dialect: 'mysql', // Always mysql for Railway
+        port: process.env.MYSQL_PORT || process.env.DB_PORT,
         logging: console.log, // Enable SQL logging for debugging
         sync: { force: false } // Disable auto-sync
     }
