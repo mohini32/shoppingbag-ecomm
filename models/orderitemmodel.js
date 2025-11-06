@@ -12,7 +12,7 @@ const OrderItem = sequelize.define('OrderItem', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Orders',
+            model: 'orders',
             key: 'id'
         }
     },
@@ -20,7 +20,7 @@ const OrderItem = sequelize.define('OrderItem', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Users',
+            model: 'users',
             key: 'id'
         }
     },
@@ -28,7 +28,7 @@ const OrderItem = sequelize.define('OrderItem', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Products',
+            model: 'products',
             key: 'id'
         }
     },
@@ -42,7 +42,7 @@ const OrderItem = sequelize.define('OrderItem', {
         allowNull: false
     }
 }, {
-    tableName: 'order_items',
+    tableName: 'orderitems',
     timestamps: true
 });
 

@@ -12,7 +12,7 @@ const CartItem = sequelize.define('CartItem', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Carts',
+            model: 'carts',
             key: 'id'
         },
     },
@@ -20,7 +20,7 @@ const CartItem = sequelize.define('CartItem', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Users',
+            model: 'users',
             key: 'id'
         },
     },
@@ -28,7 +28,7 @@ const CartItem = sequelize.define('CartItem', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Products',
+            model: 'products',
             key: 'id'
         },
     },
@@ -52,7 +52,7 @@ const CartItem = sequelize.define('CartItem', {
         allowNull: false
     }
 }, {
-    tableName: 'cart_items'
+    tableName: 'cartitems'
 });
 
 module.exports = CartItem;
