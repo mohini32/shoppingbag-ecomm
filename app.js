@@ -8,8 +8,15 @@ require('dotenv').config();
 require('./models/associations');
 
 // CORS configuration
+const allowedOrigins = [
+    'http://localhost:3000', // Development
+    process.env.FRONTEND_URL, // Production (will be set in Railway)
+    'https://shopping-bag-frontend.vercel.app', // Add your Vercel URL here
+    /\.vercel\.app$/ // Allow all Vercel subdomains
+].filter(Boolean); // Remove undefined values
+
 app.use(cors({
-    origin: 'http://localhost:3000', // Your frontend URL
+    origin: allowedOrigins,
     credentials: true // Allow cookies to be sent
 }));
 
